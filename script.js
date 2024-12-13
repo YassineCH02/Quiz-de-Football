@@ -136,71 +136,66 @@ const quizData = [
 let currentQuestion = 0;
 let score = 0;
 
-function updateProgress() {
-    const progressElement = document.getElementById("progress");
-    progressElement.textContent = `Question ${currentQuestion + 1} sur ${quizData.length}`;
+const quizContainer = document.getElementById("quiz");
+const nextBtn = document.getElementById("next-btn");
+
+function loadQuiz() {
+    const currentQuiz = quizData[currentQuestion];
+    quizContainer.innerHTML = `
+        <h2>${currentQuiz.question}</h2>
+        <img src="${currentQuiz.image}" alt="Image de la question ${currentQuestion + 1}">
+        <div>
+            ${currentQuiz.options
+                .map(
+                    (option, index) =>
+                        `<input type="radio" id="option${index}" name="answer" value="${option}">
+                        <label for="option${index}">${option}</label>`
+                )
+                .join("")}
+        </div>
+    `;
 }
 
-function loadQuestion() {
-    const quizContent = document.getElementById("quiz-content");
-    quizContent.innerHTML = ""; // Pulisce il contenuto precedente
+function showResults() {
+    quizContainer.innerHTML = `
+        <h2>Résultat</h2>
+        <p>Vous avez obtenu ${score} / ${quizData.length} bonnes réponses.</p>
+        <img src="${getResultImage(score)}" alt="Résultat">
+        <p>${getResultText(score)}</p>
+    `;
+    nextBtn.style.display = "none";
+}
 
-    if (currentQuestion < quizData.length) {
-        updateProgress(); // Aggiorna il progresso
-        const q = quizData[currentQuestion];
+function getResultImage(score) {
+    if (score <= 7) return "images/faible.jpg"; // Immagine per "faible"
+    if (score <= 14) return "images/bien.jpg";  // Immagine per "bien"
+    return "images/excellent.jpg";             // Immagine per "excellent"
+}
 
-        const questionText = document.createElement("p");
-        questionText.textContent = `${currentQuestion + 1}. ${q.question}`;
-        quizContent.appendChild(questionText);
+function getResultText(score) {
+    if (score <= 7) return "Faible. Vous devez revoir vos connaissances sur le football.";
+    if (score <= 14) return "Bien ! Vous avez une bonne connaissance du football.";
+    return "Excellent ! Vous êtes un véritable expert du football.";
+}
 
-        if (q.image) {
-            const questionImage = document.createElement("img");
-            questionImage.src = q.image;
-            questionImage.alt = `Image de la question ${currentQuestion + 1}`;
-            questionImage.classList.add("question-image");
-            quizContent.appendChild(questionImage);
-        }
-
-        q.options.forEach(option => {
-            const label = document.createElement("label");
-            const input = document.createElement("input");
-            input.type = "radio";
-            input.name = `question-${currentQuestion}`;
-            input.value = option;
-
-            label.appendChild(input);
-            label.appendChild(document.createTextNode(option));
-            quizContent.appendChild(label);
-            quizContent.appendChild(document.createElement("br"));
-        });
-
-        const nextButton = document.createElement("button");
-        nextButton.textContent = "Suivant";
-        nextButton.addEventListener("click", handleNext);
-        quizContent.appendChild(nextButton);
-    } else {
-        showResult();
+nextBtn.addEventListener("click", () => {
+    const selectedOption = document.querySelector("input[name='answer']:checked");
+    if (!selectedOption) {
+        alert("Veuillez sélectionner une réponse !");
+        return;
     }
-}
 
-function handleNext() {
-    const answer = document.querySelector(`input[name="question-${currentQuestion}"]:checked`);
-    if (answer && answer.value === quizData[currentQuestion].correct) {
+    if (selectedOption.value === quizData[currentQuestion].correct) {
         score++;
     }
+
     currentQuestion++;
-    loadQuestion();
-}
 
-function showResult() {
-    const quizContent = document.getElementById("quiz-content");
-    quizContent.innerHTML = ""; // Pulisce il contenuto precedente
+    if (currentQuestion < quizData.length) {
+        loadQuiz();
+    } else {
+        showResults();
+    }
+});
 
-    const percentage = (score / quizData.length) * 100;
-    const resultText = document.createElement("p");
-    resultText.textContent = `Vous avez obtenu ${score} réponse(s) correcte(s) sur ${quizData.length} (${percentage.toFixed(0)}%).`;
-    quizContent.appendChild(resultText);
-}
-
-// Inizia il quiz
-loadQuestion();
+loadQuiz();
