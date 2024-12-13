@@ -1,0 +1,102 @@
+/* Sfondo e stile generale */
+body {
+    background-color: #f5f5f5; /* Sfondo grigio chiaro */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333333; /* Testo grigio scuro */
+}
+
+/* Stile del titolo */
+h1 {
+    text-align: center;
+    color: #007bff; /* Colore del titolo: blu */
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/* Contenitore del quiz */
+.quiz-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Sfondo bianco */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3); /* Ombra blu */
+    line-height: 1.6;
+}
+
+/* Stile per le immagini delle domande */
+.question-image {
+    width: 100%;
+    max-width: 500px; /* Dimensione massima per uniformità */
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Ombra leggera */
+}
+
+/* Stile per i radio button */
+input[type="radio"] {
+    display: none; /* Nasconde i radio button */
+}
+
+/* Stile per le risposte multiple (etichette associate) */
+input[type="radio"] + label {
+    display: block;
+    font-size: 18px;
+    margin: 8px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #e9ecef; /* Sfondo grigio chiaro */
+    color: #333333; /* Testo grigio scuro */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Risposta selezionata */
+input[type="radio"]:checked + label {
+    background-color: #007bff; /* Sfondo blu */
+    color: #ffffff; /* Testo bianco */
+    font-weight: bold;
+    border-color: #0056b3; /* Bordo blu scuro */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Evidenziazione blu */
+}
+
+/* Effetto al passaggio del mouse */
+label:hover {
+    background-color: #cce5ff; /* Sfondo blu chiaro al passaggio del mouse */
+    color: #0056b3; /* Testo blu scuro */
+}
+
+/* Stile del pulsante */
+button {
+    background-color: #007bff; /* Blu principale */
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Blu scuro */
+}
+
+button:active {
+    background-color: #004085; /* Blu ancora più scuro */
+}
+
+/* Stile per l'immagine del risultato */
+.result-image {
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.5); /* Ombra blu */
+}
