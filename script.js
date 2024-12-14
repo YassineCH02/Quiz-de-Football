@@ -58,78 +58,6 @@ const quizData = [
         options: ["Gianluigi Buffon", "Dino Zoff", "Wojciech Szczęsny", "Petr Čech"],
         correct: "Gianluigi Buffon",
         image: "images/buffon.jpg"
-    },
-    {
-        question: "Dans quel pays se trouve le club du Boca Juniors ?",
-        options: ["Argentine", "Brésil", "Uruguay", "Chili"],
-        correct: "Argentine",
-        image: "images/boca.jpg"
-    },
-    {
-        question: "Daniele De Rossi a remporté la Coupe du Monde 2006 avec l’Italie, mais quel rôle jouait-il principalement ?",
-        options: ["Milieu défensif", "Défenseur central", "Attaquant", "Gardien de but"],
-        correct: "Milieu défensif",
-        image: "images/derossi.jpg"
-    },
-    {
-        question: "Quel club est surnommé 'Les Blaugranas' ?",
-        options: ["FC Barcelone", "Real Madrid", "Atletico Madrid", "Valence"],
-        correct: "FC Barcelone",
-        image: "images/barcelona.jpg"
-    },
-    {
-        question: "Qui est l’actuel meilleur buteur de l’histoire de la Ligue des Champions (2024) ?",
-        options: ["Cristiano Ronaldo", "Lionel Messi", "Karim Benzema", "Robert Lewandowski"],
-        correct: "Cristiano Ronaldo",
-        image: "images/cristiano.jpg"
-    },
-    {
-        question: "Quel joueur a marqué le fameux but de la 'main de Dieu' ?",
-        options: ["Diego Maradona", "Lionel Messi", "Pelé", "Roberto Baggio"],
-        correct: "Diego Maradona",
-        image: "images/maradona.jpg"
-    },
-    {
-        question: "Quel club a remporté la Serie A en 2023 après plus de 30 ans d’attente ?",
-        options: ["Napoli", "AC Milan", "Inter Milan", "Juventus"],
-        correct: "Napoli",
-        image: "images/napoli.jpg"
-    },
-    {
-        question: "Quel joueur portugais est surnommé 'CR7' ?",
-        options: ["Cristiano Ronaldo", "Luis Figo", "João Félix", "Eusebio"],
-        correct: "Cristiano Ronaldo",
-        image: "images/cr7.jpg"
-    },
-    {
-        question: "Quel pays a remporté la Coupe du Monde 2018 ?",
-        options: ["France", "Croatie", "Brésil", "Allemagne"],
-        correct: "France",
-        image: "images/france2018.jpg"
-    },
-    {
-        question: "Qui a remporté la Coupe du Monde 2014 en battant l’Argentine en finale ?",
-        options: ["Allemagne", "Brésil", "Espagne", "France"],
-        correct: "Allemagne",
-        image: "images/germany2014.jpg"
-    },
-    {
-        question: "Quel club a remporté la Premier League pour la première fois en 2016 contre toute attente ?",
-        options: ["Leicester City", "Liverpool", "Chelsea", "Manchester City"],
-        correct: "Leicester City",
-        image: "images/leicester.jpg"
-    },
-    {
-        question: "Qui a remporté le Ballon d’Or en 2022 ?",
-        options: ["Karim Benzema", "Lionel Messi", "Robert Lewandowski", "Kylian Mbappé"],
-        correct: "Karim Benzema",
-        image: "images/benzema.jpg"
-    },
-    {
-        question: "Quel joueur est célèbre pour avoir remporté trois Coupes du Monde ?",
-        options: ["Pelé", "Maradona", "Zidane", "Ronaldo Nazário"],
-        correct: "Pelé",
-        image: "images/pele.jpg"
     }
 ];
 
@@ -167,14 +95,14 @@ function showResults() {
 }
 
 function getResultImage(score) {
-    if (score <= 7) return "images/faible.jpg"; // Immagine per "faible"
-    if (score <= 14) return "images/bien.jpg";  // Immagine per "bien"
-    return "images/excellent.jpg";             // Immagine per "excellent"
+    if (score <= 3) return "images/faible.jpg";
+    if (score <= 7) return "images/bien.jpg";
+    return "images/excellent.jpg";
 }
 
 function getResultText(score) {
-    if (score <= 7) return "Faible. Vous devez revoir vos connaissances sur le football.";
-    if (score <= 14) return "Bien ! Vous avez une bonne connaissance du football.";
+    if (score <= 3) return "Faible. Vous devez revoir vos connaissances sur le football.";
+    if (score <= 7) return "Bien ! Vous avez une bonne connaissance du football.";
     return "Excellent ! Vous êtes un véritable expert du football.";
 }
 

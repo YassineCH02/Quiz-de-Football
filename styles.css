@@ -1,101 +1,90 @@
-/* Sfondo e stile generale */
+/* Sfondo generale */
 body {
-    background-color: #000000; /* Sfondo nero */
+    background-color: #2d2d2d; /* Grigio scuro */
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    color: #ffffff; /* Testo bianco */
+    color: #ffffff;
 }
 
-/* Stile del titolo */
-h1 {
+/* Titolo */
+.quiz-title {
     text-align: center;
-    color: #ff4500; /* Colore del titolo: rosso/arancione */
-    margin-bottom: 20px;
-    font-size: 2.5em;
+    color: #6A0DAD; /* Viola */
+    font-size: 36px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 /* Contenitore del quiz */
-.quiz-container {
+#quiz-container {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #1c1c1c; /* Contenitore scuro */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.5); /* Ombra rossa */
-    line-height: 1.6;
-}
-
-/* Stile per le immagini delle domande */
-.question-image {
-    width: 100%;
-    max-width: 500px; /* Dimensione massima per uniformità */
-    display: block;
     margin: 20px auto;
+    padding: 20px;
+    background-color: #404040; /* Grigio scuro */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.2); /* Ombra leggera */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-/* Stile per i radio button */
-input[type="radio"] {
-    display: none; /* Nasconde i radio button */
+/* Immagini */
+#quiz img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
-/* Stile per le risposte multiple (etichette associate) */
-input[type="radio"] + label {
+/* Etichette delle risposte */
+label {
     display: block;
     font-size: 18px;
-    margin: 8px 0;
+    color: #000000; /* Nero */
+    margin: 10px 0;
     padding: 10px;
-    border: 1px solid #555;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #333333; /* Sfondo grigio scuro */
-    color: #ffffff; /* Testo bianco */
+    background-color: #f9f9f9;
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
-/* Stile per l'etichetta quando la risposta è selezionata */
-input[type="radio"]:checked + label {
-    background-color: #ffa07a; /* Sfondo arancione chiaro */
-    color: #000000; /* Testo nero */
-    font-weight: bold;
-    border-color: #ff4500; /* Bordo rosso/arancione */
-}
-
-/* Effetto al passaggio del mouse */
 label:hover {
-    background-color: #ff4500; /* Colore rosso/arancione al passaggio del mouse */
-    color: #000000; /* Testo nero */
+    background-color: #e0e0e0;
 }
 
-/* Stile del pulsante */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    background-color: #FFD700; /* Giallo */
+    color: #2d2d2d; /* Grigio scuro */
+}
+
+/* Pulsante Suivant */
 button {
-    background-color: #ff4500;
-    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFD700; /* Giallo */
+    color: #2d2d2d; /* Grigio scuro */
     font-size: 18px;
-    padding: 15px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
+    transition: background-color 0.3s ease;
     margin-top: 20px;
 }
 
 button:hover {
-    background-color: #e63900;
+    background-color: #FF4500; /* Rosso */
+    color: #ffffff; /* Bianco */
 }
 
-button:active {
-    background-color: #cc3300;
-}
-
-/* Stile per l'immagine del risultato */
-.result-image {
-    width: 200px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.5); /* Ombra rossa */
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #FFD700; /* Giallo */
 }
