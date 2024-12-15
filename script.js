@@ -1,7 +1,7 @@
 const quizData = [
     {
         question: "Quel joueur a raté un penalty crucial en finale de la Coupe du Monde 1994 ?",
-        options: ["Roberto Baggio", "Franco Baresi", "Paolo Maldini", "Dunga"],
+        options: ["Paolo Maldini", "Franco Baresi", "Roberto Baggio", "Dunga"],
         correct: "Roberto Baggio",
         image: "images/baggio.jpg"
     },
@@ -13,13 +13,13 @@ const quizData = [
     },
     {
         question: "Quel club a remporté la Ligue des Champions en 1999 avec une victoire spectaculaire contre le Bayern Munich ?",
-        options: ["Manchester United", "Real Madrid", "AC Milan", "Ajax"],
+        options: ["Ac Milan", "Real Madrid", "Manchester United", "Ajax"],
         correct: "Manchester United",
         image: "images/manchester1999.jpg"
     },
     {
         question: "Francesco Totti a joué toute sa carrière professionnelle dans un seul club. Quel est ce club ?",
-        options: ["AS Roma", "Juventus", "Inter Milan", "AC Milan"],
+        options: ["Juventus", "AS Roma", "Inter Milan", "AC Milan"],
         correct: "AS Roma",
         image: "images/totti.jpg"
     },
@@ -37,7 +37,7 @@ const quizData = [
     },
     {
         question: "Quel club italien a remporté la Ligue des Champions en 2010 ?",
-        options: ["Inter Milan", "Juventus", "AS Roma", "Napoli"],
+        options: ["As Roma", "Juventus", "Inter Milan", "Napoli"],
         correct: "Inter Milan",
         image: "images/inter2010.jpg"
     },
@@ -49,13 +49,13 @@ const quizData = [
     },
     {
         question: "Quel joueur a inscrit un triplé en finale de la Coupe du Monde 2022 ?",
-        options: ["Kylian Mbappé", "Lionel Messi", "Olivier Giroud", "Cristiano Ronaldo"],
+        options: ["Olivier Giroud", "Lionel Messi", "Kylian Mbappé", "Cristiano Ronaldo"],
         correct: "Kylian Mbappé",
         image: "images/mbappe2022.jpg"
     },
     {
         question: "Quel gardien légendaire a joué pour la Juventus pendant plus de 20 ans ?",
-        options: ["Gianluigi Buffon", "Dino Zoff", "Wojciech Szczęsny", "Petr Čech"],
+        options: ["Dino Zoff", "Gianluigi Buffon", "Wojciech Szczęsny", "Petr Čech"],
         correct: "Gianluigi Buffon",
         image: "images/buffon.jpg"
     }
